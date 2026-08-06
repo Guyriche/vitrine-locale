@@ -24,3 +24,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@theme {
+  --color-forest: #1F3D2B;
+  --color-forest-dark: #142A1D;
+  --color-ivory: #FAF6EF;
+  --color-sand: #EDE6D6;
+  --color-gold: #C9A227;
+  --color-leaf: #3FA34D;
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-inter);
+}
