@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/lib/auth-context";
+import { CartProvider } from "@/lib/cart-context";
 import Navbar from "@/components/Navbar";
 import BottomNav from "@/components/BottomNav";
 
@@ -28,9 +29,11 @@ export default function RootLayout({
     <html lang="fr">
       <body className={`${fraunces.variable} ${inter.variable} antialiased`}>
         <AuthProvider>
-          <Navbar />
-          <main className="pb-20 md:pb-0">{children}</main>
-          <BottomNav />
+          <CartProvider>
+            <Navbar />
+            <main className="pb-20 md:pb-0">{children}</main>
+            <BottomNav />
+          </CartProvider>
         </AuthProvider>
       </body>
     </html>

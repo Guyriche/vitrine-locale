@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { supabase } from '@/lib/supabase'
+import Link from 'next/link'
 
 type Business = {
   id: string
@@ -62,7 +63,7 @@ export default function Home() {
           ) : (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {businesses.map((b) => (
-                <div key={b.id} className="bg-white rounded-2xl overflow-hidden border border-forest/10 shadow-sm hover:shadow-md transition">
+                <Link key={b.id} href={`/business/${b.id}`} className="bg-white rounded-2xl overflow-hidden border border-forest/10 shadow-sm hover:shadow-md transition block">
                   <div className="h-36 bg-sand flex items-center justify-center">
                     <span className="font-display text-forest/30 text-sm">Photo à venir</span>
                   </div>
@@ -76,7 +77,7 @@ export default function Home() {
                     {b.city && <p className="text-xs text-forest/50 mb-2">{b.city}</p>}
                     {b.description && <p className="text-sm text-forest/60 line-clamp-2">{b.description}</p>}
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           )}
