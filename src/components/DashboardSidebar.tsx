@@ -7,6 +7,7 @@ import { useAuth } from '@/lib/auth-context'
 const navItems = [
   { href: '/dashboard', label: "Vue d'ensemble", icon: '◆' },
   { href: '/dashboard/menu', label: 'Menu', icon: '▤' },
+  { href: '/dashboard/orders', label: 'Commandes', icon: '◷' },
 ]
 
 export default function DashboardSidebar() {
@@ -40,12 +41,6 @@ export default function DashboardSidebar() {
             </Link>
           )
         })}
-
-        <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-ivory/25 text-sm cursor-not-allowed">
-          <span className="text-xs">◷</span>
-          Commandes
-          <span className="ml-auto text-[9px] uppercase tracking-wide border border-ivory/15 rounded-full px-2 py-0.5">Bientôt</span>
-        </div>
       </nav>
 
       <div className="p-4 border-t border-white/5">
