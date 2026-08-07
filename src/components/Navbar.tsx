@@ -22,7 +22,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  if (HIDDEN_ON.includes(pathname)) return null
+  if (HIDDEN_ON.includes(pathname) || pathname.startsWith('/dashboard')) return null
 
   const isHeroPage = HERO_PAGES.includes(pathname)
   const transparent = isHeroPage && !scrolled

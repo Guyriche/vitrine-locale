@@ -10,6 +10,9 @@
 
   --font-display: var(--font-fraunces);
   --font-body: var(--font-inter);
+
+  --color-ink: #10140F;
+--color-panel: #1A211B;
 }
 
 body {

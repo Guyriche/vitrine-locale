@@ -16,7 +16,7 @@ export default function BottomNav() {
   const { user, profile } = useAuth()
   const pathname = usePathname()
 
-  if (HIDDEN_ON.includes(pathname)) return null
+  if (HIDDEN_ON.includes(pathname) || pathname.startsWith('/dashboard')) return null
   if (!user || profile?.role !== 'client') return null
 
   return (
